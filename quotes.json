@@ -1,42 +1,6 @@
-(function() {
-  var Component = ng.core.Component;
-  var NgModule = ng.core.NgModule;
-  var BrowserModule = ng.platformBrowser.BrowserModule;
-  var PlatformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
-
-  var RandomQuoteComponent = Component({
-    selector: 'random-quote',
-    template: '<p><em>{{quote["line"]}}</em> - {{quote["author"]}}</p>'
-  })
-  .Class({
-    constructor: function(){
-      var randomIndex = Math.floor(Math.random() * quotes.length);
-      this.quote = quotes[randomIndex];
-    }
-  });
-
-  var AppComponent = Component({
-    selector: 'my-app',
-    template:
-    '<h1>Random Quote!</h1>' +
-    '<random-quote></random-quote>'
-  })
-  .Class({
-    constructor: function(){}
-  })
-
-  var AppModule = NgModule({
-    imports: [BrowserModule],
-    declarations: [AppComponent, RandomQuoteComponent],
-    bootstrap: [AppComponent]
-  })
-  .Class({
-    constructor: function(){}
-  })
-
-  PlatformBrowserDynamic().bootstrapModule(AppModule);
-
-  var quotes = [
+{
+  "source": "http://programmers.stackexchange.com/q/39/144251",
+  "quotes": [
     {
       "line": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
       "author": "Brian W. Kernighan"
@@ -78,5 +42,4 @@
       "author": "Tom Cargill"
     }
   ]
-
-})();
+}
